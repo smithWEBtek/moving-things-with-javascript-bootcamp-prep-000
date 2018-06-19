@@ -3,13 +3,21 @@ var dodger = document.getElementById('dodger')
 
 function moveDodgerRight(){
   var removePX = dodger.style.left.replace('px','')
-  var numbers = parseInt(removePX, 10)
+  var right = parseInt(removePX, 10)
 
   if(numbers > 0){
-    dodger.style.right = `${numbers - 1}px`
+    dodger.style.right = `${right - 1}px`
   }
 }
 
+function moveDodgerLeft() {
+  var leftNumbers = dodger.style.left.replace('px', '')
+  var left = parseInt(leftNumbers, 10)
+
+  if (left > 0) {
+    dodger.style.left = `${left - 1}px`
+  }
+}
 document.addEventListener('keydown', function(e){
   if(e.which === 39){
     moveDodgerRight()
